@@ -1,0 +1,28 @@
+.footer{
+    min-height: 50px;
+    background: #333333;
+    color: #ffffff;
+    position: relative;
+}
+
+@media only screen and (min-width: 1200px){
+    .footer::before,
+    .footer::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 9999px;
+        box-sizing: border-box;
+        background: #333333;
+    }
+
+    .footer::before {
+        right: 100%;
+    }
+
+    .footer::after {
+        left: 100%
+    }
+}

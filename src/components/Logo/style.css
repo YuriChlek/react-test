@@ -1,0 +1,12 @@
+.logoWrapper{
+    max-width: 120px;
+}
+.logoWrapper a{
+    display: block;
+    width: 100%;
+}
+
+.logoImage{
+    width: 100%;
+    display: block;
+}

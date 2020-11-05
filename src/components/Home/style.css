@@ -1,0 +1,70 @@
+.title {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0 20px;
+}
+
+.imageWrapper{
+
+}
+.bannerImg{
+    display: block;
+    width: 100%;
+}
+.linksWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    list-style-type: none;
+}
+
+.ceil {
+    width: 25%;
+    margin: 0 0 4px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ceil img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+.ceil:hover > .link {
+    opacity: 1;
+}
+
+.link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s linear;
+    display: block;
+    background-color: rgba(255, 0, 0, .5);
+    z-index: 5;
+}
+
+.link::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 30px;
+    background-image: url('../../icons/watch.png');
+}
+
+@media only screen and (min-width: 1024px) {
+    .ceil:not(:nth-child(4n+1)) {
+        margin-left: 4px;
+        width: calc((100% - 16px) / 4);
+    }
+}
