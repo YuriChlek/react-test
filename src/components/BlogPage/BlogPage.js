@@ -5,7 +5,9 @@ const BlogPage = (props) => {
     
     return(
         <React.Fragment>
-            <img src="" alt=""/>
+            <h1>Hello</h1>
         </React.Fragment>
     )
 }
+
+export default BlogPage;

@@ -5,13 +5,15 @@
     margin: 30px 0 20px;
 }
 
-.imageWrapper{
+.imageWrapper {
 
 }
-.bannerImg{
+
+.bannerImg {
     display: block;
     width: 100%;
 }
+
 .linksWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +46,7 @@
     right: 0;
     left: 0;
     opacity: 0;
-    transition: opacity .5s linear;
+    transition: all 250ms ease-in;
     display: block;
     background-color: rgba(255, 0, 0, .5);
     z-index: 5;
@@ -62,7 +64,48 @@
     background-image: url('../../icons/watch.png');
 }
 
+.popupWindow {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 10;
+    transition: all 250ms linear;
+}
+
+.active {
+    top: 0;
+    bottom: 0;
+}
+
+.contentWrapper {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 25%;
+    max-width: 1150px;
+}
+
+
+.contentWrapper > img,
+.contentWrapper > iframe {
+    display: block;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+
+}
+
 @media only screen and (min-width: 1024px) {
+    .textWrapper{
+        padding: 20px 0;
+    }
     .ceil:not(:nth-child(4n+1)) {
         margin-left: 4px;
         width: calc((100% - 16px) / 4);
