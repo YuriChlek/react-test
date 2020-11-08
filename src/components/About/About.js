@@ -3,7 +3,7 @@ import style from './style.css';
 
 const About = () => {
     return (
-        <h1>About</h1>
+        <h1>About project</h1>
     )
 }
 

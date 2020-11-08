@@ -1,11 +1,12 @@
 import React from 'react';
 import style from './style.css';
+import data from '../../data/blog-pages/blogPages.json'
 
 const BlogPage = (props) => {
-    
-    return(
+    console.log(props.children);
+    return (
         <React.Fragment>
-            <h1>Hello</h1>
+            <h1>{data[props.children]}</h1>
         </React.Fragment>
     )
 }

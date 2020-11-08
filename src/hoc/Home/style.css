@@ -6,7 +6,27 @@
 }
 
 .imageWrapper {
+    position: relative;
+}
 
+.imageWrapper:hover .buttonLink{
+    opacity: 1;
+}
+
+.buttonLink {
+    position: absolute;
+    padding: 10px 40px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 0, .5);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 250ms ease-in;
 }
 
 .bannerImg {
@@ -103,9 +123,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .textWrapper{
+    .textWrapper {
         padding: 20px 0;
     }
+
     .ceil:not(:nth-child(4n+1)) {
         margin-left: 4px;
         width: calc((100% - 16px) / 4);

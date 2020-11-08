@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.css';
 import Slider from "react-slick";
+import {Link} from "react-router-dom";
 import data from '../../data/home-page/homePageContent.json';
 import imagesData from '../../data/home-page/bannerImages.json';
 
@@ -20,15 +21,20 @@ class Home extends React.Component {
     }
 
     createBannerSlider = () => {
-        return imagesData.map((item, index) => (
-                <div key={index}>
-                    <img className={style.bannerImg} src={window.location.origin + '/images/banner/' + item} alt="slide"/>
-                </div>
-            )
+        return imagesData.map((item, index) => {
+                const pageUrl = "/blog-page-html-" + index;
+                return (
+                    <div key={index} className={style.imageWrapper}>
+                        <img className={style.bannerImg} src={window.location.origin + '/images/banner/' + item}
+                             alt="slide"/>
+                        <Link to={pageUrl} className={style.buttonLink}>View</Link>
+                    </div>
+                )
+            }
         )
     }
 
-    renderLinks = () => {
+    renderPosters = () => {
         return data.content.icons.map((item, index) => (
                 <li className={style.ceil} key={index.toString()}>
                     <img src={window.location.origin + '/images/home-page/' + item} alt="slide"/>
@@ -90,7 +96,7 @@ class Home extends React.Component {
                     <p>{data.pageText.pageAfterTitle}</p>
                 </div>
                 <ul className={style.linksWrapper}>
-                    {this.renderLinks()}
+                    {this.renderPosters()}
                 </ul>
                 {this.createPopup()}
             </React.Fragment>
