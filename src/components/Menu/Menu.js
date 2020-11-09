@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import style from './style.css';
-import pages from '../../data/pages.json'
+import pages from '../../data/pages.json';
 
 const Menu = () => {
     const renderLinks = () => {

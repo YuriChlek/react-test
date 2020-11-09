@@ -3,6 +3,109 @@
     background: #333333;
     color: #ffffff;
     position: relative;
+    padding: 40px 0;
+}
+.footerWrapper{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.footerColumn{
+    width: max-content;
+    padding: 10px;
+}
+
+.footerColumn:first-child{
+    padding-left: 0;
+}
+
+.footerColumn:last-child{
+    padding-right: 0;
+    width: 25%;
+}
+
+.copyrightTitle{
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.copyright{
+    font-size: 12px;
+    margin: 0;
+}
+
+.email{
+    color: #ffffff;
+}
+
+.socialLinkWrapper{
+    padding-left: 35px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.socialLinkWrapper::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    bottom: 1px;
+    width: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.socialLinkWrapper:first-child::before{
+    background-image: url("../../icons/footer-social-icons/facebook.png");
+}
+
+.socialLinkWrapper:nth-child(2)::before{
+    background-image: url("../../icons/footer-social-icons/twitter.png");
+}
+
+.socialLinkWrapper:nth-child(3)::before{
+    background-image: url("../../icons/footer-social-icons/instagram.png");
+}
+
+.socialLinkWrapper:nth-child(4)::before{
+    background-image: url("../../icons/footer-social-icons/pinterest.png");
+}
+
+.socialLink{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footerForm{
+    display: block;
+    width: 100%;
+}
+
+.inputSubscribe{
+    display: block;
+    width: 100%;
+    margin: 10px 0 15px;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttonSubscribe{
+    padding: 10px 40px;
+    background: rgba(255, 0, 0, .5);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
 }
 
 @media only screen and (min-width: 1200px){
