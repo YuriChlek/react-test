@@ -1,14 +1,28 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import style from './style.css'
+import style from './style.css';
+import is from 'is_js';
 
 class Footer extends React.Component {
     state = {
-
+        errorMessage: 'Enter correct email',
+        valid: true,
     };
 
     submitHandler = (event) => {
-        event.preventDefault();
+        const isValid = is.email(event.target[0].value);
+        if (!isValid) {
+            event.preventDefault();
+            this.setState({
+                valid: isValid,
+            })
+        } else {
+            event.target[0].value = '';
+        }
+    };
+
+    validEmail = (event) => {
+        console.log(event)
     }
 
     render() {
@@ -39,11 +53,18 @@ class Footer extends React.Component {
                         </div>
                     </li>
                     <li className={style.footerColumn}>
-                        <form action={'#'}>
-                            <label htmlFor="Subscribe">Join our mailling list for exclusive news</label>
-                            <input className={style.inputSubscribe} id={"Subsribe"} type={"email"}
+                        <form action={'#'} onSubmit={this.submitHandler}>
+                            {this.state.valid &&
+                            <span>Join our mailling list for exclusive news</span>}
+                            {!this.state.valid &&
+                            <span className={style.errorMessage}>{this.state.errorMessage}</span>}
+                            <input onSubmit={this.validEmail}
+                                   className={style.inputSubscribe}
+                                   id={"Subscribe"}
                                    placeholder={"Enter your email"}/>
-                            <button className={style.buttonSubscribe} type={"submit"}>Subsribe</button>
+                            <button className={style.buttonSubscribe}
+                                    type={"submit"}>Subscribe
+                            </button>
                         </form>
                     </li>
                 </ul>

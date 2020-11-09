@@ -7,8 +7,9 @@ import Home from "../Home/Home";
 import Contacts from "../../components/Contacts/Contacts";
 import Blog from "../Blog/Blog";
 import BlogPage from "../../components/BlogPage/BlogPage";
+import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import dataBlogPages from '../../data/blog-pages/blogPages.json'
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 
 class Layout extends React.Component {
     renderBlogPages = () => {
@@ -30,11 +31,12 @@ class Layout extends React.Component {
                 <Header/>
                 <div className={style.mainContent}>
                     <Switch>
+                        <Route path="/" exact={true} component={Home}/>
                         <Route path="/about" component={About}/>
                         <Route path="/blog" component={Blog}/>
                         <Route path="/contacts" component={Contacts}/>
-                        <Route path="/" exact={true} component={Home}/>
                         {this.renderBlogPages()}
+                        <Route component={ErrorPage}/>
                     </Switch>
                 </div>
                 <Footer/>

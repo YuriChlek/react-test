@@ -98,6 +98,10 @@
     border: none;
 }
 
+.inputSubscribe.error{
+    outline: red;
+}
+
 .buttonSubscribe{
     padding: 10px 40px;
     background: rgba(255, 0, 0, .5);
@@ -106,6 +110,10 @@
     border-radius: 5px;
     display: block;
     margin-left: auto;
+}
+
+.errorMessage{
+    color: red;
 }
 
 @media only screen and (min-width: 1200px){
