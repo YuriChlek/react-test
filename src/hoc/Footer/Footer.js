@@ -16,7 +16,10 @@ class Footer extends React.Component {
             this.setState({
                 valid: isValid,
             })
-        } else {
+        } else if (isValid && !this.state.valid) {
+            this.setState({
+                valid: isValid,
+            })
             event.target[0].value = '';
         }
     };
