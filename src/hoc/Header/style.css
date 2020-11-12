@@ -7,6 +7,16 @@
     position: relative;
     box-sizing: border-box;
     z-index: 10;
+    background: #ffffff;
+}
+
+.header.menuOpen {
+    position: fixed;
+    top: 0;
+}
+
+.header.menuOpen + div{
+    margin-top: 87px;
 }
 
 @media only screen and (min-width: 1200px){

@@ -1,14 +1,37 @@
 import React from 'react';
-import styles from './style.css'
 import Logo from "../../components/Logo/Logo";
 import Menu from "../Menu/Menu";
+import style from "./style.css";
 
 class Header extends React.Component {
+    state = {
+        menuOpen: false,
+        headerClasses: [style.header]
+    }
+    headerFixed = () => {
+        let headerClasses = [style.header]
+        if(!this.state.menuOpen){
+            headerClasses.push(style.menuOpen);
+            console.log(headerClasses);
+            this.setState({
+                    menuOpen: true,
+                    headerClasses: headerClasses
+                }
+            )
+        } else {
+            this.setState({
+                    menuOpen: false,
+                    headerClasses: headerClasses
+                }
+            )
+        }
+    }
+
     render() {
         return (
-            <header className={styles.header}>
+            <header className={this.state.headerClasses.join(' ')}>
                 <Logo/>
-                <Menu/>
+                <Menu headerFixed={this.headerFixed.bind(this)}/>
             </header>
         )
     }

@@ -4,10 +4,13 @@ import style from './style.css';
 import pages from '../../data/pages.json';
 
 class Menu extends React.Component {
-    state = {
-        menuOpen: false,
-        menuClasses: [style.menu],
-        blindClasses: [style.blind]
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuOpen: false,
+            menuClasses: [style.menu],
+            blindClasses: [style.blind]
+        }
     }
 
     renderLinks = () => {
@@ -21,7 +24,7 @@ class Menu extends React.Component {
 
     toggleMenu = () => {
         let menuClasses = [style.menu],
-            blindClasses= [style.blind];
+            blindClasses = [style.blind];
         if (!this.state.menuOpen) {
             menuClasses.push(style.show);
             blindClasses.push(style.show);
@@ -37,21 +40,22 @@ class Menu extends React.Component {
                 blindClasses: blindClasses
             })
         }
+        this.props.headerFixed();
     }
 
-   render() {
-       return (
-           <React.Fragment>
+    render() {
+        return (
+            <React.Fragment>
             <span className={style.menuButton} onClick={this.toggleMenu}>
                 <span>&nbsp;</span>
             </span>
-               <div className={this.state.blindClasses.join(' ')} onClick={this.toggleMenu}>&nbsp;</div>
-               <ul className={this.state.menuClasses.join(' ')}>
-                   {this.renderLinks()}
-               </ul>
-           </React.Fragment>
-       )
-   }
+                <div className={this.state.blindClasses.join(' ')} onClick={this.toggleMenu}>&nbsp;</div>
+                <ul className={this.state.menuClasses.join(' ')}>
+                    {this.renderLinks()}
+                </ul>
+            </React.Fragment>
+        )
+    }
 }
 
 export default Menu;
