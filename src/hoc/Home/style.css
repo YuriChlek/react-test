@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.imageWrapper:hover .buttonLink{
+.imageWrapper:hover .buttonLink {
     opacity: 1;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .ceil {
-    width: 25%;
+    width: 100%;
     margin: 0 0 4px 0;
     box-sizing: border-box;
     position: relative;
@@ -127,8 +127,31 @@
         padding: 20px 0;
     }
 
+    .ceil {
+        width: calc((100% - 12px) / 4);
+    }
+
     .ceil:not(:nth-child(4n+1)) {
         margin-left: 4px;
-        width: calc((100% - 16px) / 4);
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .ceil {
+        width: calc((100% - 8px) / 3);
+    }
+
+    .ceil:not(:nth-child(3n+1)) {
+        margin-left: 4px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    .ceil {
+        width: calc((100% - 4px) / 2);
+    }
+
+    .ceil:not(:nth-child(2n+1)) {
+        margin-left: 4px;
     }
 }
