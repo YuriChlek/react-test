@@ -9,7 +9,7 @@ import Blog from "../Blog/Blog";
 import BlogPage from "../../components/BlogPage/BlogPage";
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import dataBlogPages from '../../data/blog-pages/blogPages.json'
-import {Switch, Route, Redirect} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 class Layout extends React.Component {
     renderBlogPages = () => {

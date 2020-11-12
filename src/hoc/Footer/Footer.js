@@ -57,12 +57,9 @@ class Footer extends React.Component {
                     </li>
                     <li className={style.footerColumn}>
                         <form action={'#'} onSubmit={this.submitHandler}>
-                            {this.state.valid &&
-                            <span>Join our mailling list for exclusive news</span>}
-                            {!this.state.valid &&
-                            <span className={style.errorMessage}>{this.state.errorMessage}</span>}
-                            <input onSubmit={this.validEmail}
-                                   className={style.inputSubscribe}
+                            {this.state.valid && <span>Join our mailling list for exclusive news</span>}
+                            {!this.state.valid && <span className={style.errorMessage}>{this.state.errorMessage}</span>}
+                            <input className={style.inputSubscribe}
                                    id={"Subscribe"}
                                    placeholder={"Enter your email"}/>
                             <button className={style.buttonSubscribe}
