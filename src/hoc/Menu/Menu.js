@@ -25,7 +25,7 @@ class Menu extends React.Component {
     toggleMenu = () => {
         let menuClasses = [style.menu],
             blindClasses = [style.blind];
-        if (!this.state.menuOpen) {
+        if (!this.state.menuOpen && document.documentElement.clientWidth <= 767) {
             menuClasses.push(style.show);
             blindClasses.push(style.show);
             this.setState({

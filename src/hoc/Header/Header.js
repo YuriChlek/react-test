@@ -12,7 +12,6 @@ class Header extends React.Component {
         let headerClasses = [style.header]
         if(!this.state.menuOpen){
             headerClasses.push(style.menuOpen);
-            console.log(headerClasses);
             this.setState({
                     menuOpen: true,
                     headerClasses: headerClasses

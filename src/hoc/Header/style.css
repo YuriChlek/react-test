@@ -10,15 +10,6 @@
     background: #ffffff;
 }
 
-.header.menuOpen {
-    position: fixed;
-    top: 0;
-}
-
-.header.menuOpen + div{
-    margin-top: 87px;
-}
-
 @media only screen and (min-width: 1200px){
     .header::before,
     .header::after {
@@ -38,5 +29,16 @@
 
     .header::after {
         left: 100%
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .header.menuOpen {
+        position: fixed;
+        top: 0;
+    }
+
+    .header.menuOpen + div{
+        margin-top: 87px;
     }
 }

@@ -9,7 +9,7 @@ class Blog extends React.Component {
             (item, index) => {
                 const pageUrl = "/blog-page-html-" + index;
                 return (
-                    <li>
+                    <li key={index}>
                         <Link to={pageUrl}>{item}</Link>
                     </li>
                 )
