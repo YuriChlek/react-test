@@ -93,7 +93,7 @@ class Home extends React.Component {
                 </Slider>
                 <div className={style.textWrapper}>
                     <h1 className={style.title}>{data.pageText.pageTitle}</h1>
-                    <p>{data.pageText.pageAfterTitle}</p>
+                    <p className={style.text}>{data.pageText.pageAfterTitle}</p>
                 </div>
                 <ul className={style.linksWrapper}>
                     {this.renderPosters()}

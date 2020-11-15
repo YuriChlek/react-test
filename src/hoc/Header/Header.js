@@ -8,9 +8,10 @@ class Header extends React.Component {
         menuOpen: false,
         headerClasses: [style.header]
     }
+
     headerFixed = () => {
         let headerClasses = [style.header]
-        if(!this.state.menuOpen){
+        if (!this.state.menuOpen) {
             headerClasses.push(style.menuOpen);
             this.setState({
                     menuOpen: true,

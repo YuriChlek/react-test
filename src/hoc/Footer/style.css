@@ -116,6 +116,10 @@
     margin-left: auto;
 }
 
+.buttonSubscribe:focus{
+    outline: none;
+}
+
 .errorMessage {
     color: red;
 }

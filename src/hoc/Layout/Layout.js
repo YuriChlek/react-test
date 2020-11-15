@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.css';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import About from "../../components/About/About";
+import About from "../About/About";
 import Home from "../Home/Home";
 import Contacts from "../../components/Contacts/Contacts";
 import Blog from "../Blog/Blog";

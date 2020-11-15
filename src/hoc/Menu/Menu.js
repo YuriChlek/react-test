@@ -33,14 +33,15 @@ class Menu extends React.Component {
                 menuClasses: menuClasses,
                 blindClasses: blindClasses
             })
-        } else {
+            this.props.headerFixed();
+        } else if (this.state.menuOpen && document.documentElement.clientWidth <= 767) {
             this.setState({
                 menuOpen: false,
                 menuClasses: menuClasses,
                 blindClasses: blindClasses
             })
+            this.props.headerFixed();
         }
-        this.props.headerFixed();
     }
 
     render() {

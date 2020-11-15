@@ -122,6 +122,10 @@
 
 }
 
+.text{
+    text-align: justify;
+}
+
 @media only screen and (min-width: 1024px) {
     .textWrapper {
         padding: 20px 0;
