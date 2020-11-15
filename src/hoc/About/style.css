@@ -1,8 +1,8 @@
-.bannerWrapper{
+.bannerWrapper {
     width: 100%;
 }
 
-.bannerWrapper > img{
+.bannerWrapper > img {
     display: block;
     width: 100%;
 }
@@ -11,7 +11,7 @@
     background: #333333;
 }
 
-.sliderItem{
+.sliderItem {
     color: white;
     text-align: center;
     padding: 40px 5px;
@@ -21,18 +21,18 @@
     justify-content: center;
 }
 
-.sliderItem:focus{
+.sliderItem:focus {
     outline: none;
 }
 
-.sliderItem img{
+.sliderItem img {
     display: block;
     width: 40px;
     height: 40px;
     align-self: center;
 }
 
-.textWrapper{
+.textWrapper {
     max-width: calc(100% - 40px);
     padding-left: 25px;
     box-sizing: border-box;
@@ -40,7 +40,7 @@
     text-transform: uppercase;
 }
 
-.textWrapper > p{
+.textWrapper > p {
     margin: 0;
 }
 
@@ -48,30 +48,30 @@
     padding: 0 0 40px;
 }
 
-.aboutTextWrapper > div{
+.aboutTextWrapper > div {
     display: flex;
     background: #f5f5f5;
 }
 
-.title{
+.title {
     text-align: center;
     margin-bottom: 35px;
 }
 
-.textTitle{
+.textTitle {
     text-align: center;
 }
 
-.imageWrapper{
+.imageWrapper {
     width: 60%;
 }
 
-.imageWrapper > img{
+.imageWrapper > img {
     display: block;
     width: 100%;
 }
 
-.textWrapperAbout{
+.textWrapperAbout {
     width: 40%;
     padding: 5px 5%;
     box-sizing: border-box;
@@ -79,22 +79,23 @@
     align-self: center;
 }
 
-.needProjectWrapper{
+.needProjectWrapper {
     text-align: center;
     padding: 10px 10px 40px;
 }
 
-.needProjectWrapper > p{
+.needProjectWrapper > p {
     max-width: 540px;
     margin: 0 auto 30px;
 }
 
-.buttonWrap{
+.buttonWrap {
     background: #333333;
     border-radius: 5px;
     display: inline-block;
 }
-.button{
+
+.button {
     padding: 10px 40px;
     background: rgba(255, 0, 0, .5);
     color: #ffffff;
@@ -103,53 +104,32 @@
     border: none;
 }
 
-.button:focus{
+.button:focus {
     outline: none;
 }
 
-.form{
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px 0;
-    flex-wrap: wrap;
+.blindMessageForm{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 10;
+    transform: translateX(100%);
+    transition: all 300ms linear;
 }
 
-.formTitle {
-    width: 100%;
+.blindMessageForm.show{
+    transform: translateX(0);
 }
 
-.inputWrapper {
-    width: calc((100% - 20px) / 2);
-    padding: 15px 0;
-    box-sizing: border-box;
-    display: block;
-}
-
-.inputWrapper:first-of-type{
-    margin-right: 20px;
-}
-
-.inputWrapper > input {
-    display: block;
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-    padding: 5px 10px;
-    line-height: 25px;
+.blindMessageForm > form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
     border-radius: 5px;
-    border: 1px solid #c5c5c5;
-}
-
-.message {
-    width: 100%;
-    min-height: 200px;
-    margin: 20px 0 30px;
-    border: 1px solid #c5c5c5;
-    border-radius: 5px;
-}
-
-.form > .buttonWrap{
-    margin: 0 auto;
+    padding: 20px;
 }

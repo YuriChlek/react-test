@@ -1,0 +1,62 @@
+.form{
+    display: flex;
+    max-width: 700px;
+    width: 100%;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.formTitle {
+    width: 100%;
+}
+
+.inputWrapper {
+    width: calc((100% - 20px) / 2);
+    padding: 15px 0;
+    box-sizing: border-box;
+    display: block;
+}
+
+.inputWrapper:first-of-type{
+    margin-right: 20px;
+}
+
+.inputWrapper > input {
+    display: block;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 5px 10px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+}
+
+.message {
+    width: 100%;
+    min-height: 200px;
+    margin: 20px 0 30px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+}
+
+.buttonWrap{
+    margin: 0 auto;
+    display: inline-block;
+    border-radius: 5px;
+    background: #333333;
+}
+
+.button{
+    padding: 10px 40px;
+    background: rgba(255, 0, 0, .5);
+    color: #ffffff;
+    border-radius: 5px;
+    display: block;
+    border: none;
+}
+
+.button:focus{
+    outline: none;
+}

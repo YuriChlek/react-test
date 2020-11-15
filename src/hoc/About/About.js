@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+import MessageForm from "../../components/MessageForm/MessageForm";
 import data from '../../data/about-page/about.json'
 import style from './style.css';
 
@@ -43,7 +44,7 @@ class About extends React.Component {
                 }
             ]
         },
-        flag: false
+        popupClasses: [style.blindMessageForm]
     }
 
     createItems = () => {
@@ -62,11 +63,19 @@ class About extends React.Component {
         })
     }
 
-    showForm = () => {
-        const flag = this.state.flag;
-        this.setState({
-            flag: !flag
-        })
+    showForm = (event) => {
+        const classes = [style.blindMessageForm];
+        //event.preventDefault();
+        if(this.state.popupClasses.indexOf(style.show) === -1 && event.target.tagName === 'BUTTON'){
+            classes.push(style.show)
+            this.setState({
+                popupClasses: classes
+            });
+        } else if (event.target.tagName === 'DIV'){
+            this.setState({
+                popupClasses: [style.blindMessageForm]
+            });
+        }
     }
 
     render() {
@@ -93,31 +102,17 @@ class About extends React.Component {
                     </div>
                 </div>
                 <div className={style.needProjectWrapper}>
-                    {
-                        !this.state.flag &&
-                        <React.Fragment>
-                            <h3>{data.needProject.title}</h3>
-                            <p>{data.needProject.text}</p>
-                            <span className={style.buttonWrap}>
+                    <React.Fragment>
+                        <h3>{data.needProject.title}</h3>
+                        <p>{data.needProject.text}</p>
+                        <span className={style.buttonWrap}>
                         <button onClick={this.showForm} className={style.button}>{"Lets Talk"}</button>
                         </span>
-                        </React.Fragment>
-                    }
-                    {this.state.flag &&
-                    <form className={style.form}>
-                        <h3 className={style.formTitle}>{"Enter Your message"}</h3>
-                        <div className={style.inputWrapper}>
-                            <input placeholder={"Enter your name"} type={"text"}/>
-                        </div>
-                        <div className={style.inputWrapper}>
-                            <input placeholder={"Enter your email"} type={"email"}/>
-                        </div>
-                        <textarea className={style.message} name="message" id=""/>
-                        <span className={style.buttonWrap}>
-                    <button onClick={this.showForm} type={"submit"} className={style.button}>{"Submit"}</button>
-                </span>
-                    </form>
-                    }
+                    </React.Fragment>
+                    <div className={this.state.popupClasses.join(' ')} onClick={this.showForm}>
+                        <MessageForm formTitle={'Enter Your message'}
+                        />
+                    </div>
                 </div>
             </React.Fragment>
         )
