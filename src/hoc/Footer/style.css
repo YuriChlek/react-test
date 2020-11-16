@@ -45,6 +45,10 @@
     color: #ffffff;
 }
 
+.email:hover {
+    color: rgba(255, 0, 0, .9);
+}
+
 .socialLinkWrapper {
     padding-left: 35px;
     position: relative;
@@ -83,6 +87,10 @@
 .socialLink {
     color: #ffffff;
     text-decoration: none;
+}
+
+.socialLink:hover {
+    color: rgba(255, 0, 0, .9);
 }
 
 .footerForm {

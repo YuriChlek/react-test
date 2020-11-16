@@ -8,7 +8,7 @@ import Contacts from "../../components/Contacts/Contacts";
 import Blog from "../Blog/Blog";
 import BlogPage from "../../components/BlogPage/BlogPage";
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
-import dataBlogPages from '../../data/blog-pages/blogPages.json'
+import dataBlogPages from '../../data/blog-pages/pagesBlog.json'
 import {Switch, Route} from "react-router-dom";
 
 class Layout extends React.Component {

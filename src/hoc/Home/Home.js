@@ -3,7 +3,7 @@ import style from './style.css';
 import Slider from "react-slick";
 import {Link} from "react-router-dom";
 import data from '../../data/home-page/homePageContent.json';
-import imagesData from '../../data/home-page/bannerImages.json';
+import imagesData from '../../data/blog-pages/pagesBlog.json';
 
 class Home extends React.Component {
     state = {
@@ -22,10 +22,10 @@ class Home extends React.Component {
 
     createBannerSlider = () => {
         return imagesData.map((item, index) => {
-                const pageUrl = "/blog-page-html-" + index;
+                const pageUrl = "/blog-html-page-" + index;
                 return (
                     <div key={index} className={style.imageWrapper}>
-                        <img className={style.bannerImg} src={window.location.origin + '/images/banner/' + item}
+                        <img className={style.bannerImg} src={window.location.origin + '/images/banner/' + item.image}
                              alt="slide"/>
                         <Link to={pageUrl} className={style.buttonLink}>View</Link>
                     </div>

@@ -24,10 +24,6 @@ class Footer extends React.Component {
         }
     };
 
-    validEmail = (event) => {
-        console.log(event)
-    }
-
     render() {
         return (
             <footer className={style.footer}>
