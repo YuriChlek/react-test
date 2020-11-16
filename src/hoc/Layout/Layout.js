@@ -14,7 +14,7 @@ import {Switch, Route} from "react-router-dom";
 class Layout extends React.Component {
     renderBlogPages = () => {
         return dataBlogPages.map((item, index) => {
-            const pageUrl = "/blog-page-html-" + index;
+            const pageUrl = "/blog-html-page-" + index;
             return (
                 <Route path={pageUrl} exact={true} key={index}>
                     <BlogPage index = {index}/>

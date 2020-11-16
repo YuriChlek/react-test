@@ -1,16 +1,10 @@
 .contactsWrapper {
-    display: flex;
-    flex-wrap: wrap;
     padding: 20px 0;
 }
 
 .info,
 .contactsWrapper > form {
-    width: calc((100% - 25px) / 2);
-}
-
-.info {
-    margin-right: 25px;
+    width: 100%;
 }
 
 .contactTitle{
@@ -26,6 +20,8 @@
 }
 .mapWrapper{
     padding: 20px 0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 .map{
     width: 100%;
@@ -33,5 +29,16 @@
 }
 
 @media only screen and (min-width: 767px) {
+    .contactsWrapper {
+        display: flex;
+    }
 
+    .info {
+        margin-right: 25px;
+    }
+
+    .info,
+    .contactsWrapper > form {
+        width: calc((100% - 25px) / 2);
+    }
 }

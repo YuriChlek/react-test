@@ -7,7 +7,7 @@ class Blog extends React.Component {
     createPosts = () => {
         return data.map(
             (item, index) => {
-                const pageUrl = "/blog-page-html-" + index;
+                const pageUrl = "/blog-html-page-" + index;
                 return (
                     <li key={index}>
                         <Link to={pageUrl}>{item}</Link>
@@ -16,6 +16,7 @@ class Blog extends React.Component {
             }
         )
     }
+
     render() {
         return (
             <ul>

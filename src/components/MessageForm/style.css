@@ -1,9 +1,7 @@
 .form{
-    display: flex;
-    max-width: 700px;
+    max-width: 740px;
     width: 100%;
     padding: 20px 0;
-    flex-wrap: wrap;
 }
 
 .formTitle {
@@ -11,14 +9,10 @@
 }
 
 .inputWrapper {
-    width: calc((100% - 20px) / 2);
+    width: 100%;
     padding: 15px 0;
     box-sizing: border-box;
     display: block;
-}
-
-.inputWrapper:first-of-type{
-    margin-right: 20px;
 }
 
 .inputWrapper > input {
@@ -59,4 +53,19 @@
 
 .button:focus{
     outline: none;
+}
+
+@media only screen and (min-width: 767px) {
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .inputWrapper {
+        width: calc((100% - 20px) / 2);
+    }
+
+    .inputWrapper:first-of-type{
+        margin-right: 20px;
+    }
 }
