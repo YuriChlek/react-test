@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Home from "../Home/Home";
 import Contacts from "../../components/Contacts/Contacts";
-import Blog from "../Blog/Blog";
+import Blog from "../../components/Blog/Blog";
 import BlogPage from "../../components/BlogPage/BlogPage";
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import dataBlogPages from '../../data/blog-pages/pagesBlog.json'
