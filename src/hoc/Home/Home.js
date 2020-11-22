@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import {Link} from "react-router-dom";
 import data from '../../data/home-page/homePageContent.json';
 import imagesData from '../../data/blog-pages/pagesBlog.json';
+import Popup from '../../components/Popup/Popup'
+import {show} from "../../store/actions/popup";
+import {connect} from "react-redux";
 
 class Home extends React.Component {
     state = {
@@ -16,7 +19,6 @@ class Home extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1
         },
-        flag: false,
         link: ''
     }
 
@@ -39,50 +41,27 @@ class Home extends React.Component {
                 <li className={style.ceil} key={index.toString()}>
                     <img src={window.location.origin + '/images/home-page/' + item} alt="slide"/>
                     <span className={style.link} onClick={() => {
-                        this.showPopup(index)
+                        this.createUrl(index, this.props.show())
                     }}/>
                 </li>
             )
         )
     }
 
-    showPopup = (index) => {
-        if (!this.state.flag) {
-            this.setState((prevState) => {
+    createUrl = (index) => {
+        if (this.props.showPopup) {
+            this.setState(() => {
                 return {
-                    flag: !prevState.flag,
+                    link: ""
+                }
+            })
+        } else if (!this.props.showPopup) {
+            this.setState(() => {
+                return {
                     link: data.content.links[index]
                 }
             })
-        } else {
-            this.setState((prevState) => {
-                return {
-                    flag: !prevState.flag,
-                    link: ''
-                }
-            })
         }
-    }
-
-    createPopup = () => {
-        const classes = [style.popupWindow];
-        if (this.state.flag) {
-            classes.push(style.active);
-        } else if (!this.state.flag && classes.indexOf('active') !== -1) {
-            classes.splice(-1, 1);
-        }
-        return (
-            <div className={classes.join(' ')} onClick={() => {
-                this.showPopup(null)
-            }}>
-                <div className={style.contentWrapper}>
-                    <iframe src={this.state.link} frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="video"/>
-                </div>
-            </div>
-        )
     }
 
     render() {
@@ -98,10 +77,29 @@ class Home extends React.Component {
                 <ul className={style.linksWrapper}>
                     {this.renderPosters()}
                 </ul>
-                {this.createPopup()}
+                <Popup additionalFunction={this.createUrl}>
+                    <div className={style.contentWrapper}>
+                        <iframe src={this.state.link} frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title="video"/>
+                    </div>
+                </Popup>
             </React.Fragment>
         )
     }
 }
 
-export default Home;
+function mapStateToProps(state) {
+    return {
+        showPopup: state.popup.showPopup
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        show: () => dispatch(show())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

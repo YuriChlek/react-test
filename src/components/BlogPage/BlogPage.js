@@ -10,8 +10,8 @@ const BlogPage = (props) => {
             prevPageUrl = "/blog-html-page-" + (props.index - 1);
         return (
             <div className={style.paginator}>
-                {(props.index > 0) && <Link className={style.prev} to={prevPageUrl}>{"Prev post"}</Link>}
-                {(props.index < maxPost) && <Link className={style.next} to={nextPageUrl}>{"Next post"}</Link>}
+                {(props.index > 0) && <Link className={style.prev} to={prevPageUrl}>Prev post</Link>}
+                {(props.index < maxPost) && <Link className={style.next} to={nextPageUrl}>Next post</Link>}
             </div>
         )
     }

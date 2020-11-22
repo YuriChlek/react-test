@@ -101,15 +101,9 @@
 }
 
 .contentWrapper {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding-bottom: 25%;
     max-width: 1150px;
 }
-
 
 .contentWrapper > img,
 .contentWrapper > iframe {

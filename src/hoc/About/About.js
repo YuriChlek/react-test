@@ -1,6 +1,9 @@
 import React from 'react';
 import Slider from "react-slick";
 import MessageForm from "../../components/MessageForm/MessageForm";
+import Popup from '../../components/Popup/Popup'
+import {show} from "../../store/actions/popup";
+import {connect} from "react-redux";
 import data from '../../data/about-page/about.json'
 import style from './style.css';
 
@@ -43,8 +46,7 @@ class About extends React.Component {
                     }
                 }
             ]
-        },
-        popupClasses: [style.blindMessageForm]
+        }
     }
 
     createItems = () => {
@@ -61,21 +63,6 @@ class About extends React.Component {
                 </React.Fragment>
             )
         })
-    }
-
-    showForm = (event) => {
-        const classes = [style.blindMessageForm];
-        //event.preventDefault();
-        if(this.state.popupClasses.indexOf(style.show) === -1 && event.target.tagName === 'BUTTON'){
-            classes.push(style.show)
-            this.setState({
-                popupClasses: classes
-            });
-        } else if (event.target.tagName === 'DIV'){
-            this.setState({
-                popupClasses: [style.blindMessageForm]
-            });
-        }
     }
 
     render() {
@@ -106,17 +93,28 @@ class About extends React.Component {
                         <h3>{data.needProject.title}</h3>
                         <p>{data.needProject.text}</p>
                         <span className={style.buttonWrap}>
-                        <button onClick={this.showForm} className={style.button}>{"Lets Talk"}</button>
+                        <button onClick={this.props.show} className={style.button}>{"Lets Talk"}</button>
                         </span>
                     </React.Fragment>
-                    <div className={this.state.popupClasses.join(' ')} onClick={this.showForm}>
-                        <MessageForm formTitle={'Enter Your message'}
-                        />
-                    </div>
+                    <Popup>
+                        <MessageForm close={true} classes={style.form} formTitle={'Enter Your message'}/>
+                    </Popup>
                 </div>
             </React.Fragment>
         )
     }
 }
 
-export default About;
+function mapStateToProps(state) {
+    return {
+        showPopup: state.popup.showPopup
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        show: () => dispatch(show())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
