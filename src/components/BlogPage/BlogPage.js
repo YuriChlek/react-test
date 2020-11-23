@@ -4,6 +4,11 @@ import data from '../../data/blog-pages/pagesBlog.json'
 import {Link} from "react-router-dom";
 
 const BlogPage = (props) => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+
     const createArrows = () => {
         const maxPost = data.length - 1,
             nextPageUrl = "/blog-html-page-" + (props.index + 1),

@@ -17,7 +17,7 @@ class Layout extends React.Component {
             const pageUrl = "/blog-html-page-" + index;
             return (
                 <Route path={pageUrl} exact={true} key={index}>
-                    <BlogPage index = {index}/>
+                    <BlogPage index={index}/>
                 </Route>
             )
         })

@@ -4,10 +4,10 @@ import style from "./style.css"
 
 const MessageForm = (props) => {
     const classes = [style.form],
-        closeButton = [style.close, 'close'],
-        [name, isValidName] = useState([style.inputWrapper]),
-        [email, isValidEmail] = useState([style.inputWrapper]),
-        [message, isValidMessage] = useState([style.messageWrapper]);
+          closeButton = [style.close, 'close'],
+          [name, isValidName] = useState([style.inputWrapper]),
+          [email, isValidEmail] = useState([style.inputWrapper]),
+          [message, isValidMessage] = useState([style.messageWrapper]);
 
 
     if (props.classes) {
@@ -43,7 +43,7 @@ const MessageForm = (props) => {
             {props.formTitle && <h3 className={style.formTitle}>{props.formTitle}</h3>}
             {props.close && <span className={closeButton.join(' ')}/>}
             <div className={name.join(' ')}>
-                <span className={style.errorMessage}>Enter correct name. Minimal length 4 symbols</span>
+                <span className={style.errorMessage}>Minimal length 4 symbols</span>
                 <input placeholder={"Enter your name"} type={"text"}/>
             </div>
             <div className={email.join(' ')}>
@@ -51,7 +51,7 @@ const MessageForm = (props) => {
                 <input placeholder={"Enter your email"} type={"email"}/>
             </div>
             <div className={message.join(' ')}>
-                <span className={style.errorMessage}>Enter correct message. Minimal length 30 symbols.</span>
+                <span className={style.errorMessage}>Minimal length 30 symbols</span>
                 <textarea className={style.message} name="message" id=""/>
             </div>
             <span className={style.buttonWrap}>

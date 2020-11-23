@@ -97,10 +97,14 @@
     display: block;
 }
 
-
 .inputWrapper.notValid > input,
 .messageWrapper.notValid > .message{
     border: 1px solid red;
+}
+
+.inputWrapper.notValid > input:focus,
+.messageWrapper.notValid > .message:focus{
+    box-shadow: 0 0 0 2px red;
 }
 
 .buttonWrap{
